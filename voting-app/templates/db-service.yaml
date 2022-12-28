@@ -3,11 +3,11 @@ kind: Service
 metadata:
   labels:
     app: db
-  name: db
+  name: {{.Values.serviceName.db}}
 spec:
   type: ClusterIP
   ports:
-  - name: "db-service"
+  - name: {{.Values.portName.db}}
     port: 5432
     targetPort: 5432
   selector:
